@@ -1,0 +1,175 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Registration Form</h2>
+<form action="register" method="post">
+{% csrf_token %}
+<div class="contact-form">
+
+      <input type="text" name="name" placeholder="Enter Your Name"><br>
+      Date of birth
+      <select name="month">
+          <option value="month">Month</option>
+           <option value="January">January</option>
+           <option value="February">February</option>
+      </select>
+      <select name="Days">
+          <option value="Days">Days</option>
+           <option value="1">1</option>
+           <option value="2">2</option>
+      </select>
+      <select name="Year">
+          <option value="Year">Year</option>
+           <option value="1985">1985</option>
+           <option value="1997">1997</option>
+      </select>
+    <br>
+      <input type="text" name="Age" placeholder="Enter Your Age"><br>
+
+         <form>
+             Gender:
+             <input type="radio" name="gender" value="male">
+             Male
+             <input type="radio" name="gender" value="female">
+             Female
+         </form>
+    <br>
+      <input type="text" name="Phone" placeholder="Enter Your Phone number"><br>
+      <input type="email" name="email" placeholder="Enter Your email address"><br>
+      <input type="text" name="address" placeholder="Enter your address"><br>
+    <body>
+
+  <label for="districtDropdown">Select District:</label>
+  <select id="districtDropdown" onchange="updateBranchDropdown()">
+    <option value="">Select District</option>
+    <option value="Ernakulam">Ernakulam</option>
+    <option value="Trivandrum">Trivandrum</option>
+    <option value="Thrissur">Thrissur</option>
+    <option value="Kollam">Kollam</option>
+    <option value="Palakkad">Palakkad</option>
+    <!-- Add more district options as needed -->
+  </select>
+
+  <label for="branchDropdown">Select Branch:</label>
+  <select id="branchDropdown">
+    <option value="">Select Branch</option>
+  </select>
+
+  <script>
+    function updateBranchDropdown() {
+      const districtDropdown = document.getElementById('districtDropdown');
+      const branchDropdown = document.getElementById('branchDropdown');
+      const selectedDistrict = districtDropdown.value;
+
+      // Clear previous options
+      branchDropdown.innerHTML = '<option value="">Select Branch</option>';
+
+      if (selectedDistrict === 'Ernakulam') {
+        // Populate branch options based on Ernakulam
+        const ernakulamBranches = ['Aluva', 'Edapally', 'Other Ernakulam branches'];
+        ernakulamBranches.forEach(branch => {
+          const option = document.createElement('option');
+          option.value = branch;
+          option.text = branch;
+          branchDropdown.appendChild(option);
+        });
+      }
+      if (selectedDistrict === 'Thrissur') {
+        // Populate branch options based on Ernakulam
+        const ernakulamBranches = ['Kodungallur', 'Chalakkudy', 'Amballur'];
+        ernakulamBranches.forEach(branch => {
+          const option = document.createElement('option');
+          option.value = branch;
+          option.text = branch;
+          branchDropdown.appendChild(option);
+        });
+      }
+      // Add more if-else conditions for other districts and their branches
+      }
+       if (selectedDistrict === 'Trivandrum') {
+        // Populate branch options based on Ernakulam
+        const ernakulamBranches = ['Neyyattinkara', 'kochuveli', 'Attukal'];
+        ernakulamBranches.forEach(branch => {
+          const option = document.createElement('option');
+          option.value = branch;
+          option.text = branch;
+          branchDropdown.appendChild(option);
+        });
+      }
+      if (selectedDistrict === 'Kollam') {
+        // Populate branch options based on Ernakulam
+        const ernakulamBranches = ['Kottarakkara', 'Chavara',];
+        ernakulamBranches.forEach(branch => {
+          const option = document.createElement('option');
+          option.value = branch;
+          option.text = branch;
+          branchDropdown.appendChild(option);
+        });
+      }
+       if (selectedDistrict === 'Palakkad') {
+        // Populate branch options based on Ernakulam
+        const ernakulamBranches = ['Alathur', 'vadakkenchery',];
+        ernakulamBranches.forEach(branch => {
+          const option = document.createElement('option');
+          option.value = branch;
+          option.text = branch;
+          branchDropdown.appendChild(option);
+        });
+      }
+      // Add more if-else conditions for other districts and their branches
+    }
+  </script>
+    </body>
+    <br>
+      <input type="text" name="account" placeholder="Enter your account number"><br>
+      <input type="text" name="address" placeholder="Enter your address"><br>
+        <select name="Materials to provide">
+            <option value="Materials to provide">select materials</option>
+            <option value="debit card">debit card</option>
+            <option value="debit card">credit card</option>
+            <option value="debit card">cheque book</option>
+        </select>
+</div>
+    <!-- Form for application submission -->
+<form id="applicationForm">
+  <input type="text" id="name" name="name"><br><br>
+  <input type="submit" value="Submit" onclick="showMessage(event)">
+</form>
+
+<!-- Message display area -->
+<div id="message" style="display: none;">
+  Application accepted. <a href="Home">Return to home page</a></p>
+      <form action="Form.html">
+      </form>
+</div>
+
+<script>
+  function showMessage(event) {
+    event.preventDefault();  // Prevent the form from submitting in the traditional way
+    document.getElementById('message').style.display = 'block';  // Display the message
+  }
+</script>
+
+
+
+{% for msg in messages %}
+{{msg}}
+{% endfor %}
+ </form>
+
+    <button onclick="login.html"></button>
+      <p><a href="Home">Go to Home Page</a></p>
+      <form action="Home.html">
+      </form>
+    <p><a href="Form">Go to Form</a></p>
+      <form action="Form.html">
+      </form>
+
+
+</body>
+</html>

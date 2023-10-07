@@ -1,0 +1,87 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+   body {
+       background-image: url(nature.jpeg):
+    </style>
+    <style>
+}
+.background
+{
+
+  background-image: url("{'% static 'nature.jpeg' %}");
+  min-height: 380px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+input[type=submit] {
+  width: 10%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 2x;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+div {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 10px;
+}
+</style>
+    <style type="text/css">
+        label{
+            width:100px;
+            display:inline-block;
+        }
+        #form{
+            border-radius: 10px;
+            background:black;
+            color:white;
+            width:100px;
+            padding:4px;
+            font-size:20px;
+            font-family:Verdana;
+            color:white;
+        }
+        h2{
+             text-align: left;
+        }
+        {
+
+    </style>
+</head>
+<body bgcolor="yellow">
+
+<h2>Registration</h2>
+<form action="register" method="post">
+{% csrf_token %}
+    <label>Username</label>
+    <input type="text" name="username" placeholder="Enter Your Username" required><br>
+    <label>Password</label>
+      <input type="password" name="password" placeholder="Enter your password" required><br>
+    <label>C Password</label>
+      <input type="password" name="password1" placeholder="Confirm your password" required><br>
+    <input type="submit">
+
+
+</form>
+{% for msg in messages %}
+{{msg}}
+{% endfor %}
+</body>
+</html>
